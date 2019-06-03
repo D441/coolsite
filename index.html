@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>	</title>
+	<style type="text/css">
+		.window{
+			height: 400px;
+			width:400px;
+			background-color: green;
+			position: absolute;
+			top:-50%;
+			transition: 1s;
+			left:40%;
+			display: none;
+		}
+	</style>
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+	<div class="game">
+		<h1 class="text-center">POINTS</h1>
+		<h1 class="points text-center">0</h1>
+		
+
+		<div class="container">
+			<div class="row">
+				<div class="col-3 border" style="height: 300px; background: #fbbb11">
+					<img class="jake w-75" src="jake.png" alt="" style="display: none">
+					<img class="king w-75" src="Ice_King.png" alt="" style="display: none">
+				</div>
+				<div class="col-3 border" style="height: 300px; background: #fbbb11">
+					<img class="jake" src="jake.png"  alt="" style="display: none">
+					<img class="king w-75" src="Ice_King.png" alt="" style="display: none">
+				</div>
+				<div class="col-3 border" style="height: 300px; background: #fbbb11">
+					<img class="jake" src="jake.png"  alt="" style="display: none">
+					<img class="king w-75" src="Ice_King.png" alt="" style="display: none">
+				</div>
+				<div class="col-3 border" style="height: 300px; background: #fbbb11">
+					<img class="jake" src="jake.png"  alt="" style="display: none">
+					<img class="king w-75" src="Ice_King.png" alt="" style="display: none">
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-3 border" style="height: 300px; background: #fbbb11">
+					<img class="jake" src="jake.png" alt="" style="display: none">
+					<img class="iceking w-75" src="Ice_King.png" alt="" style="display: none">
+				</div>
+				<div class="col-3 border" style="height: 300px; background: #fbbb11">
+					<img class="jake" src="jake.png"  alt="" style="display: none">
+					<img class="iceking w-75" src="Ice_King.png" alt="" style="display: none">
+				</div>
+				<div class="col-3 border" style="height: 300px; background: #fbbb11">
+					<img class="jake" src="jake.png"  alt="" style="display: none">
+					<img class="iceking w-75" src="Ice_King.png" alt="" style="display: none">
+				</div>
+				<div class="col-3 border" style="height: 300px; background: #fbbb11">
+					<img class="jake" src="jake.png"  alt="" style="display: none">
+					<img class="iceking w-75" src="Ice_King.png" alt="" style="display: none">
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="window"></div>
+
+
+	<script>
+		let jake = document.querySelectorAll(".jake");
+		let chuchelo = document.querySelectorAll(".iceking");
+		let score = 0;
+		let x = function(){
+			let rand = Math.random()*7
+			let round = Math.round(rand)
+			let y = function(){
+				jake[round].style.display = "none"
+			}
+			setTimeout(y,1000)
+			jake[round].style.display = "block"
+			jake[round].onclick = function(){
+				jake[round].style.display = "none"
+				score = score + 1
+				document.querySelector(".points").innerHTML = score;
+			}
+		}
+		var noproblem = setInterval(x,1000)
+		let z = function(){
+			let rand = Math.random()*7
+			let round = Math.round(rand)
+			let u = function(){
+				chuchelo[round].style.display = "none"
+			}
+			setTimeout(u,1000)
+			chuchelo[round].style.display = "block"
+			chuchelo[round].onclick = function(){
+				chuchelo[round].style.display = "none"
+				score = score - 3
+				document.querySelector(".points").innerHTML = score;
+			}
+		}
+		var oke = setInterval(z,2000)
+		let finale = function(){
+			if ( score  >= 5  ) {
+				alert("хоба это победа")
+			} 
+			else{
+				alert("проиграл")
+			}
+			clearInterval(oke)
+			clearInterval(noproblem)
+		}
+		setTimeout(finale,10000)
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+окай
